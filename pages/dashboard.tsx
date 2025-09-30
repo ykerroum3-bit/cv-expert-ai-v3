@@ -159,15 +159,14 @@ export default function Dashboard({ user, cvs, analyses }: DashboardProps) {
 // --- Fonction Serveur Next.js (getServerSideProps) ---
 // Le code ci-dessous s'exécute côté serveur pour charger les données.
 
-// IMPORTANT : Les imports dans getServerSideProps doivent être séparés
-// pour la bonne gestion des modules Vercel.
-import { authOptions } from './api/auth/[...nextauth]';
+// IMPORTANT : Renommer l'import pour éviter les doublons
+import { authOptions as nextAuthOptions } from './api/auth/[...nextauth]';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     // Importation dynamique du client Prisma (pour éviter les erreurs de compilation)
     const prisma = (await import('../lib/prisma')).default;
 
-    const session = await getServerSession(context.req, context.res, authOptions);
+    const session = await getServerSession(context.req, context.res, nextAuthOptions);
 
     if (!session || !session.user || !(session.user as { id: string }).id) {
         return {
