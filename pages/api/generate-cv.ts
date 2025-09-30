@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from './auth/[...nextauth]';
 import prisma from '../../lib/prisma';
-import { CvData } from '../../../types';
+import { CvData } from '../../types';
 
 // Simulation de la fonction d'appel IA
 async function callAIGeneration(data: CvData): Promise<string> {
