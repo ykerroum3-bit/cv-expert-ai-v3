@@ -2,18 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-background text-textPrimary font-sans;
-}
-
-.card {
-  @apply bg-card rounded-xl shadow-card p-6;
-}
-
-.button-primary {
-  @apply bg-accent text-white font-semibold py-2 px-4 rounded-xl hover:bg-blue-600 transition;
-}
-
-.button-secondary {
-  @apply bg-highlight text-white font-semibold py-2 px-4 rounded-xl hover:bg-cyan-600 transition;
+@layer base {
+  body {
+    @apply bg-blue-night text-gray-200 font-sans;
+  }
 }
