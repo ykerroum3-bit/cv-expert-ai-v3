@@ -1,57 +1,22 @@
-/*
-  Ceci est la version compilée de tous les styles Tailwind.
-  Elle est directement injectée dans l'application pour garantir
-  que le thème s'affiche correctement, contournant les problèmes
-  de compilation de Vercel/Next.js.
-*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Base Styles */
-body {
-  background-color: #0D1B2A;
-  color: #f3f4f6;
-  min-height: 100vh;
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    @apply bg-blue-night text-gray-200 font-sans min-h-screen;
+  }
 }
 
-/* Base Tailwind Classes */
-a {
-  color: #00ADB5;
-  text-decoration: none;
+/* Composants réutilisables */
+.card {
+  @apply bg-dark-gray p-6 rounded-xl shadow-lg border border-gray-700;
 }
 
-a:hover {
-  text-decoration: underline;
+.button-primary {
+  @apply px-6 py-3 bg-accent-cyan text-white rounded-xl font-semibold shadow-md hover:bg-light-blue transition duration-300;
 }
 
-/* UTILITIES */
-.bg-\\[\\#0D1B2A\\] { background-color: #0D1B2A; }
-.bg-\\[\\#1A2A3A\\] { background-color: #1A2A3A; }
-.text-white { color: #ffffff; }
-.text-gray-100 { color: #f3f4f6; }
-.text-gray-300 { color: #d1d5db; }
-.text-gray-400 { color: #9ca3af; }
-.text-cyan-400 { color: #22d3ee; }
-.text-indigo-600 { color: #4f46e5; }
-.hover\\:bg-indigo-700:hover { background-color: #4338ca; }
-.bg-indigo-600 { background-color: #4f46e5; }
-.border-gray-700 { border-color: #374151; }
-.rounded-xl { border-radius: 0.75rem; }
-.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-
-.flex { display: flex; }
-.justify-center { justify-content: center; }
-.items-center { align-items: center; }
-.space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
-.w-full { width: 100%; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-
-.text-5xl { font-size: 3rem; line-height: 1; }
-.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-.font-extrabold { font-weight: 800; }
-.px-8 { padding-left: 2rem; padding-right: 2rem; }
-.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-
-/* ... Ajoutez ici toutes les autres classes ... */
-/* NOTE: La liste ci-dessus est un extrait. La version finale complète sera très longue. */
+.button-secondary {
+  @apply px-6 py-3 bg-transparent text-gray-300 border border-gray-600 rounded-xl hover:bg-gray-800 transition duration-300;
+}
