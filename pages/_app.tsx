@@ -7,8 +7,9 @@ import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 
 // C'est LA LIGNE CRUCIALE pour les styles.
-// Elle dit à Next.js : "Charge le fichier de styles pour tout le site."
 import '../styles/globals.css';
+
+// TODO: (01H00) Cette ligne est un marqueur pour forcer la compilation sur Vercel.
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
